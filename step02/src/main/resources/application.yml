@@ -1,0 +1,26 @@
+
+spring:
+  jpa:
+    hibernate:
+#      ddl-auto: create
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+    show-sql: true
+    database: oracle
+    database-platform: org.hibernate.dialect.OracleDialect
+
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@127.0.0.1:1521:xe
+    username: devuser2
+    password: dev000
+
+  batch:
+    job:
+      names: ${job.name:NONE}
+
+logging:
+  level:
+    root: info
+    org.hibernate: info
+    com.example.demo: debug
